@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng quản lý sản phẩm</title>
+    <script src="quan_ly_dia_chi_so_dien_thoai.js"></script>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 1000px;
+        }
+        tr:nth-child(odd) {
+            background-color: #dddddd;
+        }
+        td, th {
+            border: 1px solid gray;
+            text-align: left;
+            padding: 8px; /*thêm vào khoảng không cho thành phần*/
+        }
+        .text{
+            font-family: arial, sans-serif;
+            width: 305px;
+            height: 20px;
+        }
+        .button{
+            background-color: lightblue;
+            font-family: arial, sans-serif;
+            width: 100px;
+            height: 36px;
+        }
+    </style>
+</head>
+<body>
+<form name="frmstudent">
+    <p>
+        <h3>THÊM SỬA XÓA SINH VIÊN</h3>
+        Tên sinh viên<span style="color: red"> *</span><br>
+    <input class="text" type="text" name="student" id="student" placeholder="VD: Nguyễn Văn Đạt"><br><br>
+        Số điện thoại:<span style="color: red"> *</span><br>
+    <input class="text" type="text" name="phone" id="phone" placeholder="VD: 096783878"><br><br>
+        Địa chỉ:<span style="color: red"> *</span><br>
+    <input class="text" type="text" name="adress" id="adress" placeholder="VD: Nghệ An, Việt Nam"><br><br>
+        <input class="button" type="button" id="btnAdd" value="Thêm mới" onclick="addStudent();">
+        <input class="button" type="button" id="btnSave" value="Lưu lại" disabled onclick="saveStudent();">
+        <input class="button" type="button" id="btnReset" value="Reset" onclick="resetStudent();">
+    <HR>
+    <h3>THÔNG TIN TẤT CẢ SINH VIÊN</h3>
+        Tổng số: <SPAN id="countsv"></SPAN> SV
+        <span id="result"></span>
+    </p>
+</form>
+</body>
+</html>
