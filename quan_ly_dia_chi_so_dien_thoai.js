@@ -90,9 +90,6 @@ function showStudent() {
 //Lưu lại sinh viên đã sửa----------------------------------------------------------------------------------------------
 function saveStudent(index) {
     index=k;
-    //Bật tắt nút BUTTON
-     document.getElementById("btnSave").disabled=true;
-     document.getElementById("btnAdd").disabled=false;
 
     //Lấy dữ liệu từ thẻ input text nhập vào mảng
     let editName = document.getElementById("student").value;
@@ -111,6 +108,10 @@ function saveStudent(index) {
          document.getElementById("student").value = '';
          document.getElementById("phone").value = '';
          document.getElementById("adress").value = '';
+
+        //Bật tắt nút BUTTON
+         document.getElementById("btnSave").disabled=true;
+         document.getElementById("btnAdd").disabled=false;
      }
      showStudent();
  }
@@ -120,6 +121,15 @@ function saveStudent(index) {
      let optionDelete=confirm("Bạn có chắc chắn muốn xóa không?");
      if (optionDelete){
          arrStudent.splice(index,1);
+
+         //Gán giá trị rỗng cho thẻ INPUT
+         document.getElementById("student").value = '';
+         document.getElementById("phone").value = '';
+         document.getElementById("adress").value = '';
+
+         //Bật tắt nút BUTTON
+         document.getElementById("btnSave").disabled=true;
+         document.getElementById("btnAdd").disabled=false;
      }
      showStudent();
  }
